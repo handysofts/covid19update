@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">COVID-19 Update</string>
+    <string name="label_total_cases">Total cases:</string>
+    <string name="label_deaths">Deaths:</string>
+    <string name="label_recovered">Recovered:</string>
+    <string name="button_view_more">View more in site</string>
+    <string name="info_select_country">Please select country:</string>
+</resources>

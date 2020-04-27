@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_between_fields">10dp</dimen>
+    <dimen name="small_margin_between_fields">5dp</dimen>
+    <dimen name="text_size_info">20sp</dimen>
+    <dimen name="radius">6dp</dimen>
+    <dimen name="padding_button">10dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding">10dp</dimen>
+</resources>
