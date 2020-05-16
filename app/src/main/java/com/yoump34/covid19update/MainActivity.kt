@@ -19,10 +19,8 @@ import androidx.core.content.ContextCompat
 import androidx.work.BackoffPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
+import com.startapp.sdk.adsbase.StartAppSDK
 import com.yoump34.covid19update.models.Country
 import com.yoump34.covid19update.tasks.CheckForUpdateWorker
 import com.yoump34.covid19update.tasks.CheckForUpdateWorker.Companion.parseForCountryUpdates
@@ -71,10 +69,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initAds() {
-        MobileAds.initialize(this) {}
-        val mAdView: AdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
+        StartAppSDK.init(this, getString(R.string.ad_startApp_id))
     }
 
 
@@ -127,7 +122,8 @@ class MainActivity : AppCompatActivity() {
                 val country = countries[pos]
                 Log.v(TAG, "Selected country is $country!")
                 selectedCountry = country
-                findViewById<TextView>(R.id.textViewTotalCasesLabel).text=getString(R.string.label_total_cases).plus(" ").plus(country.name)
+                findViewById<TextView>(R.id.textViewTotalCasesLabel).text =
+                    getString(R.string.label_total_cases).plus(" ").plus(country.name)
                 findViewById<TextView>(R.id.textViewTotalCases).text = country.totalCases
                 findViewById<TextView>(R.id.textViewNewCases).text = country.newCases
                 findViewById<TextView>(R.id.textViewTotalDeaths).text = country.totalDeaths

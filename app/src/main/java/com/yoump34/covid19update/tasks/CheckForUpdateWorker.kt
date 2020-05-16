@@ -120,18 +120,19 @@ class CheckForUpdateWorker(private val appContext: Context, workerParams: Worker
             val statsTable = doc.select("table#main_table_countries_today")
             statsTable.select("tbody").select("tr").forEach {
                 val cols = it.select("td")
-                if (cols[0].text().isNotBlank() && !cols[0].text().toLowerCase(Locale.ENGLISH)
+                val countryNameCol = cols[1]
+                if (countryNameCol.text().isNotBlank() && !countryNameCol.text().toLowerCase(Locale.ENGLISH)
                         .contains("total")
                 ) {
-                    val uri: Element? = cols[0].select("a").first()
+                    val uri: Element? = countryNameCol.select("a").first()
                     val country = Country(
-                        name = cols[0].text(),
+                        name = countryNameCol.text(),
                         uri = uri?.attr("href") ?: "",
-                        totalCases = cols[1].text(),
-                        newCases = cols[2].text().replace("+", ""),
-                        totalDeaths = cols[3].text(),
-                        newDeaths = cols[4].text().replace("+", ""),
-                        totalRecovered = cols[5].text()
+                        totalCases = cols[2].text(),
+                        newCases = cols[3].text().replace("+", ""),
+                        totalDeaths = cols[4].text(),
+                        newDeaths = cols[5].text().replace("+", ""),
+                        totalRecovered = cols[6].text()
                     )
                     countries.add(country)
                 }

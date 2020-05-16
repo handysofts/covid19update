@@ -5,4 +5,6 @@
     <string name="label_recovered">Recovered:</string>
     <string name="button_view_more">View more in site</string>
     <string name="info_select_country">Please select country:</string>
+
+    <string name="ad_startApp_id">204857694</string>
 </resources>

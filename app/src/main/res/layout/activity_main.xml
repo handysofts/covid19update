@@ -71,15 +71,13 @@
 
         </LinearLayout>
 
-        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <com.startapp.sdk.ads.banner.Mrec
             android:id="@+id/adView"
             android:layout_width="wrap_content"
-            android:layout_below="@+id/layoutUpdates"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_between_fields"
+            android:layout_below="@+id/layoutUpdates"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            ads:adSize="MEDIUM_RECTANGLE"
-            ads:adUnitId="ca-app-pub-0438255688791784/9465879912" />
+            android:layout_marginTop="@dimen/margin_between_fields" />
     </RelativeLayout>
 </ScrollView>
